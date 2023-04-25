@@ -1,0 +1,16 @@
+syntax = "proto3";
+package rs.ac.uns.ftn.grpc;
+import "google/protobuf/timestamp.proto";
+
+message BloodDonationRequest{
+  google.protobuf.Timestamp startTime =1;
+  google.protobuf.Timestamp endTime = 2;
+  string patientName = 3;
+  string location = 4;
+}
+
+message BloodDonationAppointment{
+  google.protobuf.Timestamp startTime =1;
+  string patientName = 2;
+  string location = 3;
+}
