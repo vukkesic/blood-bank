@@ -18,7 +18,7 @@ import java.io.IOException;
 @EnableScheduling
 public class SendingNotifications {
     CloseableHttpClient httpClient = HttpClients.createDefault();
-    @Scheduled(fixedRate = 10000)
+    //@Scheduled(fixedRate = 10000)
     public void sendNotification() throws IOException {
         HttpPost httpPost = new HttpPost("http://localhost:16177/api/BloodDonationNotificationsControllercs");
         httpPost.setHeader("Accept", "application/json, text/plain, */*");
