@@ -24,7 +24,7 @@ public class SendingNotifications {
     //@Scheduled(fixedRate = 10000)
     public static void sendNotification(BloodDonationNotificationDTO dto) throws IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost("http://localhost:16177/api/BloodDonationNotificationsControllercs");
+        HttpPost httpPost = new HttpPost("http://localhost:16177/api/BloodDonationController");
         httpPost.setHeader("Accept", "application/json, text/plain, */*");
         httpPost.setHeader("Authorization", "Bearer");
         httpPost.setHeader("Content-type", "application/json; charset=utf-8");
