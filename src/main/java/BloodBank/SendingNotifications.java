@@ -34,7 +34,7 @@ public class SendingNotifications {
         ZonedDateTime parsedStartDate = ZonedDateTime.parse(startDate, formatter);
         String endDate = dto.getEndTime().toString();
         ZonedDateTime parsedEndDate = ZonedDateTime.parse(endDate, formatter);
-        String json =String.format("{\"id\":0,\"title\":\"%s.\",\"text\":\"%s\",\"startTime\":\"%s\",\"endTime\":\"%s\",\"location\":\"%s.\"}", dto.getTitle(), dto.getText(), parsedStartDate.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME), parsedEndDate.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME), dto.getLocation());
+        String json =String.format("{\"id\":0,\"title\":\"%s.\",\"text\":\"%s\",\"startTime\":\"%s\",\"endTime\":\"%s\",\"location\":\"%s\",\"status\":\"PENDING\"}", dto.getTitle(), dto.getText(), parsedStartDate.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME), parsedEndDate.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME), dto.getLocation());
 
         StringEntity stringEntity = new StringEntity(json);
         httpPost.setEntity(stringEntity);

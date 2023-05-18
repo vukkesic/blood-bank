@@ -3,6 +3,7 @@ package BloodBank;
 import BloodBank.dto.BloodDonationRequestDTO;
 import BloodBank.model.BloodDonationAppointment;
 import BloodBank.repository.BloodDonationAppointmentRepository;
+import com.google.protobuf.util.Timestamps;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.protobuf.ProtoUtils;
@@ -69,6 +70,7 @@ public class SpringGrpcService extends SpringGrpcServiceGrpc.SpringGrpcServiceIm
         rs.ac.uns.ftn.grpc.Model.BloodDonationAppointment responseAppointment = rs.ac.uns.ftn.grpc.Model.BloodDonationAppointment.newBuilder()
                 .setPatientName(appointment.getPatientName())
                 .setLocation(appointment.getLocation())
+                .setStartTime(Timestamps.fromMillis(appointment.getStartTime().getTime()))
                 .build();
         responseObserver.onNext(responseAppointment);
         responseObserver.onCompleted();
